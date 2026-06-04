@@ -1,7 +1,6 @@
 // src/pages/Validation.tsx
 import React, { useState, useCallback } from 'react';
 import { 
-  ConfigProvider, 
   Card, 
   Button, 
   Typography, 
@@ -12,11 +11,6 @@ import {
   Result, 
   Descriptions, 
   Progress,
-  Timeline,
-  Statistic,
-  Row,
-  Col,
-  Modal,
   message,
   Spin,
   Input
@@ -27,7 +21,6 @@ import {
   CloseCircleOutlined, 
   ClockCircleOutlined, 
   CalendarOutlined, 
-  TagOutlined, 
   ReloadOutlined,
   ArrowLeftOutlined,
   QrcodeOutlined,
@@ -39,7 +32,7 @@ import {
   FileTextOutlined
 } from '@ant-design/icons';
 
-const { Title, Text, Paragraph } = Typography;
+const { Title, Text } = Typography;
 
 // ===================== TYPES =====================
 interface TicketInfo {
@@ -156,20 +149,6 @@ const MOCK_TICKETS: Record<string, TicketInfo> = {
     status: 'invalid_time',
     qrCode: 'TKT-006-UVWX'
   },
-};
-
-// 获取当前时段信息
-const getCurrentTimeSlot = (): string => {
-  const now = new Date();
-  const currentHour = now.getHours();
-  const currentMinute = now.getMinutes();
-  const currentTime = `${currentHour.toString().padStart(2, '0')}:${currentMinute.toString().padStart(2, '0')}`;
-  
-  // 定义时段
-  if (currentTime >= '09:00' && currentTime <= '18:00') return '09:00-18:00';
-  if (currentTime >= '18:00' && currentTime <= '21:00') return '18:00-21:00';
-  if (currentTime >= '16:00' && currentTime <= '19:00') return '16:00-19:00';
-  return 'closed';
 };
 
 // 验证门票
@@ -340,7 +319,7 @@ const Validation: React.FC<ValidationProps> = ({ onBack }) => {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
-            <Button size='large' icon={<ArrowLeftOutlined />} onClick={onBack} size="large">
+            <Button size='large' icon={<ArrowLeftOutlined />} onClick={onBack}>
               Back
             </Button>
             <Title level={3} className="!mb-0">

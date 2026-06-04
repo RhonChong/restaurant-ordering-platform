@@ -1,5 +1,5 @@
 // src/pages/GroupBooking.tsx
-import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import {
   ConfigProvider,
   Card,
@@ -15,7 +15,6 @@ import {
   message,
   Input,
   InputNumber,
-  Select,
   DatePicker,
   TimePicker,
   Badge,
@@ -27,8 +26,6 @@ import {
   Radio,
   QRCode,
   Empty,
-  Tooltip,
-  Spin
 } from 'antd';
 import {
   TeamOutlined,
@@ -36,7 +33,6 @@ import {
   ClockCircleOutlined,
   DollarOutlined,
   QrcodeOutlined,
-  DownloadOutlined,
   PrinterOutlined,
   CheckCircleOutlined,
   ReloadOutlined,
@@ -164,7 +160,6 @@ const GroupBooking: React.FC<GroupBookingProps> = ({ onBack }) => {
   const [showQRModal, setShowQRModal] = useState<boolean>(false);
   const [qrCodeDataUrl, setQrCodeDataUrl] = useState<string>('');
   const [isPrinting, setIsPrinting] = useState<boolean>(false);
-  const qrCanvasRef = useRef<HTMLCanvasElement | null>(null);
 
   const groupedResources = useMemo(() => groupByCategory(RESOURCES), []);
   const categories = Object.keys(groupedResources);

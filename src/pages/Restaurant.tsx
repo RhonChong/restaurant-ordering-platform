@@ -34,7 +34,6 @@ interface TableOutlinedProps {
 }
 const TableOutlined: React.FC<TableOutlinedProps> = ({ className, style, color = "currentColor" }) => (
   <svg
-    t="1780562913066"
     className={className}
     viewBox="0 0 1024 1024"
     version="1.1"

@@ -1,6 +1,6 @@
 // src/pages/Ticketing.tsx
 import React, { useState, useMemo, useCallback } from 'react';
-import { ConfigProvider, message, Modal, Button, Card, Badge, Empty, Typography, Divider, List, Space, Tag, Avatar, Form, Input, DatePicker, Radio } from 'antd';
+import { ConfigProvider, message, Modal, Button, Card, Badge, Empty, Typography, Divider, List, Space, Tag, Form, Input, DatePicker, Radio } from 'antd';
 import { 
   FileTextOutlined, 
   ShoppingCartOutlined, 
@@ -20,7 +20,7 @@ import {
 } from '@ant-design/icons';
 import dayjs, { Dayjs } from 'dayjs';
 
-const { Title, Text, Paragraph } = Typography;
+const { Title, Text } = Typography;
 
 // ===================== TYPES =====================
 interface Attraction {

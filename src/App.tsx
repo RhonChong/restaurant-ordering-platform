@@ -1,6 +1,6 @@
 // src/App.tsx
 import React, { useState } from 'react';
-import { ConfigProvider, Card, Button, Typography, Space, Modal } from 'antd';
+import { ConfigProvider, Card, Button, Typography } from 'antd';
 import { CoffeeOutlined, FileTextOutlined, QrcodeOutlined, TeamOutlined } from '@ant-design/icons';
 import Restaurant from './pages/Restaurant';
 import Ticketing from './pages/Ticketing';
