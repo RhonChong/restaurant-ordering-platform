@@ -367,7 +367,7 @@ const Restaurant: React.FC<RestaurantProps> = ({ onBack }) => {
 
             <div className="space-y-2 mb-6">
               {completedOrder.items.map((item, idx) => (
-                <div key={idx} className="flex justify-between py-2 border-b border-dashed last:border-0">
+                <div key={idx} className="flex justify-between py-2 border-b-gray-400 last:border-0">
                   <span>{item.name} x{item.quantity}</span>
                   <span>${(item.price * item.quantity).toFixed(2)}</span>
                 </div>
