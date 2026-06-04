@@ -1,0 +1,21 @@
+[build]
+  # 构建命令
+  command = "npm run build"
+  # 发布目录（Vite填dist，React填build）
+  publish = "dist"
+
+# 修复JS/CSS MIME类型错误 + SPA路由刷新404
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 强制正确的MIME类型
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Content-Type = "text/css"
